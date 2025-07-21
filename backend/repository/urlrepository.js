@@ -2,9 +2,9 @@
 // all interactions to DB
 const Url=require('../models/Url');
 
-async function storeUrl(shortid,originalUrl)
+async function storeUrl(shortid,longurl)
 {
-    const newurl=new Url({shorturl:shortid,longurl:originalUrl});
+    const newurl=new Url({shorturl:shortid,longurl:longurl});
     return await newurl.save(); 
 }
 async function geturlbyshortid(shortid)

@@ -4,11 +4,11 @@ const {sanitizeBody}=require('express-validator');
 const sanitizeinput= (req,res,next)=>
 {
     try{
-    if(req.body && typeof req.body.url=='string')
-    {
-        req.body.url=req.body.url.trim();
-    }
-    next();
+        if(req.body && typeof req.body.url=='string')
+        {
+            req.body.url=req.body.url.trim();
+        }
+        next();
     }
     catch(error)
     {

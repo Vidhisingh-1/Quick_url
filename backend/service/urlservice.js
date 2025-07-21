@@ -1,9 +1,20 @@
 const express=require('express');
 const Url=require('../models/Url');
-const urlrepo=require('../repository/urlrepository');
+const {storeUrl,geturlbyshortid}=require('../repository/urlrepository');
 const nanoid=require('nanoid');
 //assuming all validation and sanitization has been don
 // then only it has reached till here
+function isValidUrl(url)
+{
+    try{
+        new Url(url);
+        return true;
+    }
+    catch(err)
+    {
+        return false;
+    }
+}
 async function shorten(longurl)
 {
     try{
