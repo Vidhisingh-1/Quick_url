@@ -1,7 +1,7 @@
 const express=require('express');
 const Url=require('../models/Url');
 const {storeUrl,geturlbyshortid, incrementcount}=require('../repository/urlrepository');
-const nanoid=require('nanoid');
+const {nanoid}=require('nanoid');
 //assuming all validation and sanitization has been don
 // then only it has reached till here
 function isValidUrl(url)
