@@ -3,7 +3,7 @@ const app=express();
 const dotenv=require("dotenv");
 dotenv.config();
 const cors=require('cors');
-const port=process.env.port || 8081 ;
+const PORT=process.env.port || 8081 ;
 const urlroutes=require('./routes/urlroutes');
 const connectDB=require("./configs/mongodbconnection");
 const { sanitizeinput } = require("./middlewares/sanitizeinput");
@@ -35,6 +35,6 @@ app.use((err,req,res,next)=>{
     });
 });
 
-app.listen(port,()=>{ 
-    console.log(`Server running on port ${port}`);
+app.listen(PORT,()=>{ 
+    console.log(`Server running on port ${PORT}`);
 });
