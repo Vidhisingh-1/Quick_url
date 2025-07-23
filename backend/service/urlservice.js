@@ -7,7 +7,7 @@ const nanoid=require('nanoid');
 function isValidUrl(url)
 {
     try{
-        new Url(url);
+        new URL(url);
         return true;
     }
     catch(err)
@@ -30,7 +30,7 @@ async function shorten(longurl)
             throw new Error('Invalid URL');
         }
         const shortid=nanoid(6);
-        const urlDoc=await urlrepo.storeUrl(shortid,longurl);
+        const urlDoc=await storeUrl(shortid,longurl);
         return urlDoc;
     }
     catch(error)
@@ -62,7 +62,7 @@ async function shortenurl(req,res,next){
 async function redirectUrl(shortid)
 {
     try{
-        const urlDoc=await urlrepo.geturlbyshortid(shortid);
+        const urlDoc=await geturlbyshortid(shortid);
         if(!urlDoc)
         {
             throw new Error('URL not found');
