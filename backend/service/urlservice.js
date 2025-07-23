@@ -1,6 +1,6 @@
 const express=require('express');
 const Url=require('../models/Url');
-const {storeUrl,geturlbyshortid}=require('../repository/urlrepository');
+const {storeUrl,geturlbyshortid, incrementcount}=require('../repository/urlrepository');
 const nanoid=require('nanoid');
 //assuming all validation and sanitization has been don
 // then only it has reached till here
@@ -46,7 +46,7 @@ async function shortenurl(req,res,next){
         }
         const urlDoc=await shorten(url);
         res.json({
-            shorturl:`https://${req.get('host')}/${urlDoc.shorturl}`
+            shorturl:`https://quick-url.onrender.com/${urlDoc.shorturl}`
         });
     }
     //handled in middleware
@@ -68,7 +68,7 @@ async function redirectUrl(shortid)
             throw new Error('URL not found');
         }
         console.log(urlDoc);
-        await urlrepo.incrementcount(urlDoc);
+        await incrementcount(urlDoc);
         return urlDoc.longurl;
     }
     catch(error)

@@ -14,7 +14,7 @@ async function geturlbyshortid(shortid)
 
 async function incrementcount(urlDoc)
 {
-    urlDoc.clickCount++;
+    urlDoc.clickcount++;
     return await urlDoc.save();
 }
 

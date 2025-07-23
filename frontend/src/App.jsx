@@ -6,21 +6,22 @@ import "./App.css";
 
 function App() {
   const [longUrl, setLongUrl] = useState("");
-  const [apiResult, setApiResult] = useState(null);
+  const [apiResult, setApiResult] = useState();
 
   useEffect(() => {
     axios.get("https://quick-url.onrender.com").catch(() => {});
   }, []);
 
   const shortenUrl = async () => {
-    if (!longUrl.trim()) return;
-    setApiResult(null); // Reset previous response
+    
     try {
       const res = await axios.post(
         "https://quick-url.onrender.com/api/shorten",
         { url: longUrl }
       );
-      setApiResult({ status: "success", data: res.data });
+      setApiResult({
+        status:"success",data:res.data
+    });
     } catch (err) {
       if (err.response && err.response.status === 429) {
         setApiResult({ status: "rate_limit" });
