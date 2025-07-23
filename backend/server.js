@@ -3,7 +3,7 @@ const app=express();
 const dotenv=require("dotenv");
 dotenv.config();
 const cors=require('cors');
-const port=process.env.port;
+const port=process.env.port || 8081 ;
 const urlroutes=require('./routes/urlroutes');
 const connectDB=require("./configs/mongodbconnection");
 const { sanitizeinput } = require("./middlewares/sanitizeinput");
