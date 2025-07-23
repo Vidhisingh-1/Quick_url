@@ -58,7 +58,7 @@ function App() {
       <div className="response-area">
         {apiResult?.status === "success" && (
           <ShortURL
-            shortUrl={apiResult.data.shorturl}
+            shorturl={apiResult.data.shorturl}
             message={apiResult.data.message}
           />
         )}
