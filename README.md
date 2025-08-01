@@ -1,6 +1,6 @@
 # 🔗 QuickURL: URL Shortener with Rate Limiting
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-green?logo=vercel)](https://quickurl.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-green?logo=vercel)](https://quick-url-five.vercel.app/)
 
 A full-stack **URL shortener** application with **rate limiting**, built using **MERN stack** and following **MVC architecture**.  
 Users can shorten long URLs and get redirectable short links. The backend enforces a strict rate limit per IP to prevent abuse.
