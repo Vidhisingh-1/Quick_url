@@ -46,7 +46,8 @@ async function shortenurl(req,res,next){
         }
         const urlDoc=await shorten(url);
         res.json({
-            shorturl:`https://quick-url.onrender.com/${urlDoc.shorturl}`
+            shorturl:`https://quick-url.onrender.com/${urlDoc.shorturl}`,
+            shortId:urlDoc.shortid
         });
     }
     //handled in middleware

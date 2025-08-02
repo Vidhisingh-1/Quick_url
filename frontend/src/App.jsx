@@ -60,6 +60,7 @@ function App() {
           <ShortURL
             shorturl={apiResult.data.shorturl}
             message={apiResult.data.message}
+            shortid={apiResult.data.shortId}
           />
         )}
 

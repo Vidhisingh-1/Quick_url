@@ -110,6 +110,7 @@ body {
   color: #3b82f6;
   font-size: 1rem;
   font-weight: bold;
+  cursor:pointer;
 }
 
 /* Error and Rate Limit */

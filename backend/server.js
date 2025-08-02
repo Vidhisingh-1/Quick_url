@@ -21,7 +21,7 @@ app.set('trust proxy', 1);
 
 app.use(limiter);
 
-app.use('/api',urlroutes);
+app.use('/',urlroutes);
 
 app.get("/",(req,res)=>{
     res.send("Hello ! Welcome to URL Shortener API");

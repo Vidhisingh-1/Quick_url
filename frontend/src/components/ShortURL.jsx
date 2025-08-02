@@ -1,6 +1,10 @@
 import React from "react";
-function ShortURL({shorturl,message})
+function ShortURL({shorturl,message,shortid})
 {
+    const redirecturl=()=>{
+        window.open(shorturl,"_blank");
+    };
+
     return (
         <div className="shorturl-container">
       <p className="success-message">{message || "URL shortened successfully!"}</p>
@@ -9,8 +13,10 @@ function ShortURL({shorturl,message})
             Short URL :  
         </div>
 
-                <div className="shorturl">
-                    {shorturl}
+                <div className="shorturl" onClick={redirecturl}>
+
+                {shorturl}
+          
                 </div>
         
       </div>
