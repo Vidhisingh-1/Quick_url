@@ -16,7 +16,7 @@ function App() {
     
     try {
       const res = await axios.post(
-        "https://quick-url.onrender.com/api/shorten",
+        "https://quick-url.onrender.com/shorten",
         { url: longUrl }
       );
       setApiResult({
